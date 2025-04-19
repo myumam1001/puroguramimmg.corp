@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>パスワード認証</title>
+</head>
+<body>
+  <h2>パスワードを入力してください</h2>
+  <input type="password" id="password" placeholder="パスワード">
+  <button onclick="checkPassword()">送信</button>
+  <p id="message"></p>
+
+  <script>
+    const correctPassword = "pass123";
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      const msg = document.getElementById("message");
+
+      if (input === correctPassword) {
+        msg.textContent = "認証成功！";
+        msg.style.color = "green";
+        // 認証後にページ遷移させる場合
+        // window.location.href = "secret.html";
+      } else {
+        msg.textContent = "パスワードが違います。";
+        msg.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
